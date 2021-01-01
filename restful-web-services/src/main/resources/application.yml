@@ -1,0 +1,35 @@
+logging:
+  level:
+    org:
+      springframework: debug
+
+spring:
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: default
+  datasource:
+    url: jdbc:h2:mem:testdb
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+jwt:
+  signing:
+    key:
+      secret: mySecret
+  get:
+    token:
+      uri: /authenticate
+  refresh:
+    token:
+      uri: /refresh
+  http:
+    request:
+      header: Authorization
+  token:
+    expiration:
+      in:
+        seconds: 604800
